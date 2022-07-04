@@ -1,13 +1,11 @@
-package tests
+package filedb
 
 import (
 	"testing"
-
-	"github.com/eriicafes/filedb"
 )
 
 func TestDatabaseGetSet(t *testing.T) {
-	db := filedb.New("store")
+	db := New("store")
 
 	people := []string{"First", "Second", "Third"}
 
