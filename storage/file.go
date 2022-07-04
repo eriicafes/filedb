@@ -2,7 +2,6 @@ package storage
 
 import (
 	"encoding/json"
-	"fmt"
 	"os"
 )
 
@@ -24,8 +23,6 @@ func (fs *fileStorage) read() []byte {
 	file, err := os.ReadFile(fs.Filename())
 
 	if err != nil {
-		fmt.Println("db read err:", err)
-
 		file, err := os.Create(fs.Filename())
 
 		file.WriteString(fileStorageDefaultString)
@@ -45,8 +42,6 @@ func (fs *fileStorage) write(data []byte) {
 	err := os.WriteFile(fs.Filename(), data, os.FileMode(0644))
 
 	if err != nil {
-		fmt.Println("db write err:", err)
-
 		panic(err)
 	}
 }
