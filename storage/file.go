@@ -1,4 +1,4 @@
-package filedb
+package storage
 
 import (
 	"encoding/json"
@@ -6,12 +6,7 @@ import (
 	"os"
 )
 
-type Store map[string][]interface{}
-
-type Storage interface {
-	Get(resource string) (data []interface{})
-	Set(resource string, data []interface{})
-}
+const fileStorageDefaultString = "{}"
 
 type fileStorage struct {
 	name string
@@ -20,8 +15,6 @@ type fileStorage struct {
 func NewFileStorage(name string) *fileStorage {
 	return &fileStorage{name}
 }
-
-const fileStorageDefaultString = "{}"
 
 func (fs *fileStorage) Filename() string {
 	return fs.name + ".json"

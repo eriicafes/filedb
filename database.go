@@ -2,6 +2,8 @@ package filedb
 
 import (
 	"encoding/json"
+
+	"github.com/eriicafes/filedb/storage"
 )
 
 type ID int
@@ -9,13 +11,13 @@ type ForeignKey *ID
 
 type Database struct {
 	name    string
-	storage Storage
+	storage storage.Storage
 }
 
 func New(name string) *Database {
 	return &Database{
 		name:    name,
-		storage: NewFileStorage(name),
+		storage: storage.NewFileStorage(name),
 	}
 }
 
