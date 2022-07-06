@@ -29,7 +29,7 @@ import (
 func main() {
 	db := filedb.New()
     
-    people := []string{"First", "Second", "Third"}
+	people := []string{"First", "Second", "Third"}
 
 	// store to db
 	var data []interface{}
