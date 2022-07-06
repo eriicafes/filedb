@@ -1,7 +1,7 @@
 
 # FileDB
 
-A File DB for prototyping in GO
+A File DB for prototyping in Go
 
 
 ## Installation
